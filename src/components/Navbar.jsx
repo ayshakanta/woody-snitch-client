@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -7,7 +7,9 @@ const Navbar = () => {
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", localTheme || theme);
   }, [theme]);
 
   const handleTheme = (e) => {
@@ -17,19 +19,20 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+
   const navLinks = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="allArtAndCraft">All Art & Craft Items</NavLink>
       </li>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="addArtAndCraft">Add Art & Craft Item</NavLink>
       </li>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="myList">My Art & Craft List</NavLink>
       </li>
     </>
   );
@@ -61,7 +64,13 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+
+          <div className="flex justify-center items-center">
+            <img className="w-14" src="./../../public/logo.png" alt="" />
+            <Link to="/">
+              <a className="btn btn-ghost text-xl">Woody Snitch</a>
+            </Link>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
