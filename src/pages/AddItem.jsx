@@ -75,6 +75,7 @@ const AddItem = () => {
               <label className="label">
                 <span className="label-text">Subcategory Name</span>
               </label>
+
               <input
                 name="subcategory"
                 type="text"
@@ -82,6 +83,23 @@ const AddItem = () => {
                 className="input input-bordered w-full"
                 required
               />
+              {/* <select
+                className="select select-bordered w-full max-w-xs input  "
+                defaultValue="subcategory"
+                type="text"
+                placeholder="Subcategory Name"
+                required
+              >
+                <option disabled selected>
+                  Subcategory Name
+                </option>
+                <option>Wooden Furniture & Sculptures</option>
+                <option>Wooden Home Decor</option>
+                <option>Wooden Utensils and Kitchenware</option>
+                <option>Jute Home Decor</option>
+                <option>Jute Kitchenware & utensils</option>
+                <option>Jute and wooden jewellery</option>
+              </select> */}
             </div>
           </div>
           <div className="md:flex w-full gap-2">
