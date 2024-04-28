@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="flex justify-center items-center">
             <img className="w-14" src="./../../public/logo.png" alt="" />
             <Link to="/">
-              <a className="btn btn-ghost text-xl">Woody Snitch</a>
+              <button className="btn btn-ghost text-xl">Woody Snitch</button>
             </Link>
           </div>
         </div>
