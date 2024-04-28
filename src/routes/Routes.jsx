@@ -7,6 +7,8 @@ import AllItem from "../pages/AllItem";
 import MyList from "../pages/MyList";
 import UpdateItem from "../components/UpdateItem";
 import ViewDetails from "../components/ViewDetails";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "update",
         element: <UpdateItem></UpdateItem>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },
