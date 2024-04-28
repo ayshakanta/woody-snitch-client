@@ -6,6 +6,7 @@ import AddItem from "../pages/AddItem";
 import AllItem from "../pages/AllItem";
 import MyList from "../pages/MyList";
 import UpdateItem from "../components/UpdateItem";
+import ViewDetails from "../components/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       {
         path: "addArtAndCraft",
         element: <AddItem></AddItem>,
+      },
+      {
+        path: "viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addItem/${params.id}`),
       },
       {
         path: "allArtAndCraft",

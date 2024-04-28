@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CraftItem = ({ item }) => {
-  const { name, imageUrl, price, rating, stockStatus } = item;
+  const { _id, name, imageUrl, price, rating, stockStatus } = item;
   return (
     <div>
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -15,7 +15,7 @@ const CraftItem = ({ item }) => {
           <p>Rating: {rating}</p>
 
           <div className="card-actions justify-end">
-            <Link>
+            <Link to={`viewDetails/${_id}`}>
               <button className="btn btn-primary">View Details</button>
             </Link>
           </div>
