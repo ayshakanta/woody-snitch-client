@@ -1,8 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        console.log("user logged out");
+      })
+      .catch((error) => console.error(error));
+  };
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -113,13 +124,34 @@ const Navbar = () => {
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </label>
-          <NavLink to="/register">
-            <button>Register</button>
-          </NavLink>
-          <span>/</span>
-          <NavLink to="/login">
-            <button>Login</button>
-          </NavLink>
+
+          {user ? (
+            <>
+              <div
+                className="tooltip user-profile mr-2 md:mr-4"
+                data-tip={user.displayName}
+              >
+                <img
+                  className="profile-picture w-12 h-12 rounded-full"
+                  src={user.photoURL}
+                  alt={user.displayName}
+                />
+              </div>
+              <button className="btn text-sky-900" onClick={handleLogout}>
+                LogOut
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="bg-gray-100 p-4 mr-3 rounded-full">
+                <FaUser></FaUser>
+              </div>
+
+              <NavLink to="/login">
+                <button className="btn text-sky-900">Login</button>
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </div>

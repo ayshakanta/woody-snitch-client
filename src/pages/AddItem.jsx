@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const AddItem = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddItem = (event) => {
     event.preventDefault();
+
     const form = event.target;
     const name = form.name.value;
     const subcategory = form.subcategory.value;
@@ -14,7 +19,7 @@ const AddItem = () => {
     const time = form.time.value;
     const stockStatus = form.stockStatus.value;
     const userName = form.userName.value;
-    const userEmail = form.userEmail.value;
+    const userEmail = user.email;
 
     const newItem = {
       name,
@@ -76,30 +81,35 @@ const AddItem = () => {
                 <span className="label-text">Subcategory Name</span>
               </label>
 
-              <input
+              {/* <input
                 name="subcategory"
                 type="text"
                 placeholder="Subcategory Name"
                 className="input input-bordered w-full"
                 required
-              />
-              {/* <select
+              /> */}
+              <select
                 className="select select-bordered w-full max-w-xs input  "
-                defaultValue="subcategory"
+                name="subcategory"
                 type="text"
                 placeholder="Subcategory Name"
                 required
               >
-                <option disabled selected>
-                  Subcategory Name
+                <option value="Wooden Furniture & Sculptures">
+                  Wooden Furniture & Sculptures
                 </option>
-                <option>Wooden Furniture & Sculptures</option>
-                <option>Wooden Home Decor</option>
-                <option>Wooden Utensils and Kitchenware</option>
-                <option>Jute Home Decor</option>
-                <option>Jute Kitchenware & utensils</option>
-                <option>Jute and wooden jewellery</option>
-              </select> */}
+                <option value="Wooden Home Decor">Wooden Home Decor</option>
+                <option value="Wooden Utensils and Kitchenware">
+                  Wooden Utensils and Kitchenware
+                </option>
+                <option value="Jute Home Decor">Jute Home Decor</option>
+                <option value="Jute Kitchenware & utensils">
+                  Jute Kitchenware & utensils
+                </option>
+                <option value="Jute and wooden jewellery">
+                  Jute and wooden jewellery
+                </option>
+              </select>
             </div>
           </div>
           <div className="md:flex w-full gap-2">
