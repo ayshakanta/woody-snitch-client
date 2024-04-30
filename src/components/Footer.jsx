@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center p-10 bg-amber-50 text-base-content rounded mt-10 ">
       <div className="flex">
-        <h2 className="text-4xl">Woody Snitch</h2>
+        <h2 className="text-3xl font-bold">Woody Snitch</h2>
         <img className="w-24 " src="/logo.png" alt="" />
       </div>
       <nav className="grid grid-flow-col gap-4">

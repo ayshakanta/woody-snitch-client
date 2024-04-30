@@ -48,8 +48,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="lg:mx-10 md:mx-5  mt-10 drop-shadow-md lg:p-4 ">
+      <div className="navbar  bg-amber-50">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,7 +79,9 @@ const Navbar = () => {
           <div className="flex justify-center items-center">
             <img className="w-14" src="./../../public/logo.png" alt="" />
             <Link to="/">
-              <button className="btn btn-ghost text-xl">Woody Snitch</button>
+              <button className="btn btn-ghost font-extrabold sm:text-xl md:2xl lg:text-3xl">
+                Woody Snitch
+              </button>
             </Link>
           </div>
         </div>
@@ -132,12 +134,12 @@ const Navbar = () => {
                 data-tip={user.displayName}
               >
                 <img
-                  className="profile-picture w-12 h-12 rounded-full"
+                  className="profile-picture w-12 h-12 rounded-full md:ml-2"
                   src={user.photoURL}
                   alt={user.displayName}
                 />
               </div>
-              <button className="btn text-sky-900" onClick={handleLogout}>
+              <button className="btn text-amber-600" onClick={handleLogout}>
                 LogOut
               </button>
             </>
@@ -148,11 +150,11 @@ const Navbar = () => {
               </div>
 
               <NavLink to="/register">
-                <button className="btn text-sky-900">Register</button>
+                <button className="btn text-amber-600">Register</button>
               </NavLink>
               <span>/</span>
               <NavLink to="/login">
-                <button className="btn text-sky-900">Login</button>
+                <button className="btn text-amber-600">Login</button>
               </NavLink>
             </>
           )}

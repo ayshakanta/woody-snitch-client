@@ -66,8 +66,8 @@ const UpdateItem = () => {
       });
   };
   return (
-    <div className="items-center text-center flex flex-col justify-center">
-      <h1>Add Art And Craft Item</h1>
+    <div className="items-center text-center flex flex-col justify-center mt-20 mb-20 bg-amber-50  p-5">
+      <h1 className="text-2xl font-bold p-5">Update Your Art And Craft Item</h1>
       <form onSubmit={handleUpdate} className=" w-2/3">
         <div className="w-full">
           <div className="md:flex  gap-2 w-full">
@@ -213,7 +213,11 @@ const UpdateItem = () => {
             </div>
           </div>
 
-          <input type="submit" value="Update" className="btn btn-block" />
+          <input
+            type="submit"
+            value="Update"
+            className="btn btn-block bg-amber-700 text-white mt-5"
+          />
         </div>
       </form>
     </div>

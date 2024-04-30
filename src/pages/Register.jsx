@@ -119,13 +119,13 @@ const Register = () => {
               </span>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-sky-900 text-white">Register</button>
+              <button className="btn bg-amber-700 text-white">Register</button>
             </div>
           </form>
           <p>
             Have an account ? Please
             <Link to="/login">
-              <button className="btn btn-link text-sky-900">Login</button>
+              <button className="btn btn-link text-amber-700">Login</button>
             </Link>
           </p>
           {success && <p>{success}</p>}

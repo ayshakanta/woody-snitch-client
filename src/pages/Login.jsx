@@ -99,25 +99,25 @@ const Login = () => {
               </span>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-sky-900 text-white">Login</button>
+              <button className="btn bg-amber-700 text-white">Login</button>
             </div>
           </form>
           <button
             className="bg-gray-200 p-2 rounded-lg mt-4 text-sky-900"
             onClick={handleGoogleSignIn}
           >
-            Sign In With <span className="text-teal-500">Google!</span>
+            Sign In With <span className="text-amber-700">Google!</span>
           </button>
           <button
             className="bg-gray-200 p-2 rounded-lg mt-4 text-sky-900"
             onClick={handleGithubSignIn}
           >
-            Sign In With <span className="text-teal-500">Github!</span>
+            Sign In With <span className="text-amber-700">Github!</span>
           </button>
           <p>
             New here ? Please
             <Link to="/register">
-              <button className="btn btn-link text-sky-900">Register</button>
+              <button className="btn btn-link text-amber-700">Register</button>
             </Link>
           </p>
           {loginError && <p>{loginError}</p>}

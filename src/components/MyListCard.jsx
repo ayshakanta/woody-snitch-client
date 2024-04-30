@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyListCard = ({ item, items, setItems }) => {
-  const { _id, name, imageUrl, price, rating, stockStatus } = item;
+  const { _id, name, imageUrl, price, rating, stockStatus, customization } =
+    item;
   const handleDelete = (_id) => {
     console.log(_id);
 
@@ -46,8 +47,9 @@ const MyListCard = ({ item, items, setItems }) => {
           <p>Price: {price}</p>
           <p>Stock Status: {stockStatus}</p>
           <p>Rating: {rating}</p>
+          <p>Customization: {customization}</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between p-5 font-bold text-amber-700">
           <Link to={`update/${_id}`}>
             <button>Update</button>
           </Link>

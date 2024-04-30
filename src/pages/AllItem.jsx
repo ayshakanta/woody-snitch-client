@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllItem = () => {
   const allCraftItems = useLoaderData();
   return (
-    <div>
+    <div className="lg:mx-10 mt-20 mb-20 bg-amber-50 lg:p-5">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -26,7 +26,9 @@ const AllItem = () => {
                 <td>{item.price}</td>
                 <td>
                   <Link to={`/details/${item._id}`}>
-                    <button>Details</button>
+                    <button className="font-bold text-amber-700">
+                      Details
+                    </button>
                   </Link>
                 </td>
               </tr>

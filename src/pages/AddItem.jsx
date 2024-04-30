@@ -59,10 +59,10 @@ const AddItem = () => {
   };
 
   return (
-    <div className="items-center text-center flex flex-col justify-center">
-      <h1>Add Art And Craft Item</h1>
-      <form onSubmit={handleAddItem} className=" w-2/3">
-        <div className="w-full">
+    <div className="items-center text-center flex flex-col justify-center bg-amber-50 mt-20 mb-20 p-5">
+      <h1 className="text-3xl font-bold p-10">Add Art And Craft Item</h1>
+      <form onSubmit={handleAddItem} className=" w-2/3  ">
+        <div className="w-full ">
           <div className="md:flex  gap-2 w-full">
             <div className="flex-1">
               <label className="label">
@@ -76,12 +76,12 @@ const AddItem = () => {
                 required
               />
             </div>
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <label className="label">
                 <span className="label-text">Subcategory Name</span>
               </label>
               <select
-                className="select select-bordered w-full max-w-xs input  "
+                className="select select-bordered w-full  input  "
                 name="subcategory"
                 type="text"
                 placeholder="Subcategory Name"
@@ -222,7 +222,11 @@ const AddItem = () => {
             />
           </div>
 
-          <input type="submit" value="Add" className="btn btn-block" />
+          <input
+            type="submit"
+            value="Add"
+            className="btn btn-block mt-10 text-white mb-5 bg-amber-600"
+          />
         </div>
       </form>
     </div>

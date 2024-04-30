@@ -14,7 +14,7 @@ const ErrorPage = () => {
       </p>
 
       <Link
-        className="bg-sky-900 text-white font-medium px-3 py-2 rounded-lg "
+        className="bg-amber-700 text-white font-medium px-3 py-2 rounded-lg "
         to="/"
       >
         Go Back To Home
