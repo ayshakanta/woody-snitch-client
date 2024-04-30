@@ -18,6 +18,17 @@ const MyList = () => {
   }, [user]);
   return (
     <div>
+      <label>Customization</label>
+      <select
+        className="select select-bordered w-full max-w-xs input  "
+        name="customization"
+        type="text"
+        placeholder="customization"
+        required
+      >
+        <option value="yes">yes</option>
+        <option value="no">no</option>
+      </select>
       {items.map((item) => (
         <MyListCard
           key={item._id}
