@@ -10,7 +10,9 @@ const MyList = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myList/${user?.email}`)
+    fetch(
+      ` https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/myList/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -36,13 +36,16 @@ const AddItem = () => {
     };
     console.log(newItem);
 
-    fetch("http://localhost:5000/addItem", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newItem),
-    })
+    fetch(
+      " https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/addItem",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

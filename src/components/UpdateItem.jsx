@@ -45,13 +45,16 @@ const UpdateItem = () => {
     };
     console.log(updatedItem);
 
-    fetch(`http://localhost:5000/myList/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedItem),
-    })
+    fetch(
+      ` https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/myList/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedItem),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

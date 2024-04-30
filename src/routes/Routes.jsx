@@ -21,7 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addItem"),
+        loader: () =>
+          fetch(
+            " https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/addItem"
+          ),
       },
       {
         path: "addArtAndCraft",
@@ -39,7 +42,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addItem/${params.id}`),
+          fetch(
+            ` https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/addItem/${params.id}`
+          ),
       },
       {
         path: "details/:id",
@@ -49,12 +54,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allItem/${params.id}`),
+          fetch(
+            ` https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/allItem/${params.id}`
+          ),
       },
       {
         path: "allArtAndCraft",
         element: <AllItem></AllItem>,
-        loader: () => fetch("http://localhost:5000/allItem"),
+        loader: () =>
+          fetch(
+            " https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/allItem"
+          ),
       },
       {
         path: "myList",
@@ -72,7 +82,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myList/details/${params.id}`),
+          fetch(
+            ` https://woody-snitch-server-1vh7dfyj0-ayshas-projects-55bed21a.vercel.app/myList/details/${params.id}`
+          ),
       },
       {
         path: "/register",
