@@ -80,14 +80,6 @@ const AddItem = () => {
               <label className="label">
                 <span className="label-text">Subcategory Name</span>
               </label>
-
-              {/* <input
-                name="subcategory"
-                type="text"
-                placeholder="Subcategory Name"
-                className="input input-bordered w-full"
-                required
-              /> */}
               <select
                 className="select select-bordered w-full max-w-xs input  "
                 name="subcategory"
@@ -216,18 +208,19 @@ const AddItem = () => {
               />
             </div>
           </div>
-          {/* <div className="flex-1">
+          <div className="flex-1">
             <label className="label">
               <span className="label-text">User Email</span>
             </label>
             <input
               name="userEmail"
+              defaultValue={user.email}
               type="email"
               placeholder="User Email"
               className="input input-bordered w-full"
               required
             />
-          </div> */}
+          </div>
 
           <input type="submit" value="Add" className="btn btn-block" />
         </div>
