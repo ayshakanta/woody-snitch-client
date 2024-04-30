@@ -216,7 +216,7 @@ const AddItem = () => {
               />
             </div>
           </div>
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <label className="label">
               <span className="label-text">User Email</span>
             </label>
@@ -227,7 +227,7 @@ const AddItem = () => {
               className="input input-bordered w-full"
               required
             />
-          </div>
+          </div> */}
 
           <input type="submit" value="Add" className="btn btn-block" />
         </div>

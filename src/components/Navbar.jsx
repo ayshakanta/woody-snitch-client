@@ -147,6 +147,10 @@ const Navbar = () => {
                 <FaUser></FaUser>
               </div>
 
+              <NavLink to="/register">
+                <button className="btn text-sky-900">Register</button>
+              </NavLink>
+              <span>/</span>
               <NavLink to="/login">
                 <button className="btn text-sky-900">Login</button>
               </NavLink>
