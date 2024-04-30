@@ -19,7 +19,12 @@ const MyList = () => {
   return (
     <div>
       {items.map((item) => (
-        <MyListCard key={item._id} item={item}></MyListCard>
+        <MyListCard
+          key={item._id}
+          item={item}
+          items={items}
+          setItems={setItems}
+        ></MyListCard>
       ))}
     </div>
   );

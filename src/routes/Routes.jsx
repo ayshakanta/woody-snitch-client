@@ -10,6 +10,7 @@ import ViewDetails from "../components/ViewDetails";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import PrivateRoute from "./PrivateRoute";
+import Details from "../components/Details";
 
 const router = createBrowserRouter([
   {
@@ -41,8 +42,19 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/addItem/${params.id}`),
       },
       {
+        path: "details/:id",
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allItem/${params.id}`),
+      },
+      {
         path: "allArtAndCraft",
         element: <AllItem></AllItem>,
+        loader: () => fetch("http://localhost:5000/allItem"),
       },
       {
         path: "myList",
@@ -53,12 +65,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "update",
+        path: "myList/update/:id",
         element: (
           <PrivateRoute>
             <UpdateItem></UpdateItem>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myList/details/${params.id}`),
       },
       {
         path: "/register",
